@@ -9,6 +9,13 @@ $\LaTeX$中的PPT并不是真正的PPT，而是编译成类似PPT版式的pdf文
 \documentclass{beamer}
 ```
 
+!!! note "重要"
+	默认不支持中文，如果需要支持中文：
+	```latex
+	\usepackage{bookmark} % 不知道为什么，不加这个宏包就报错
+	\usepackage[UTF8]{ctex}
+	```
+
 添加文件的基本信息：
 
 ```latex
