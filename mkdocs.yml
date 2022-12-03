@@ -107,7 +107,7 @@ plugins:
       auto_caption: false
       caption_position: bottom
   - git-revision-date-localized:
-      # enable_creation_date: true
+      enable_creation_date: true
       type: timeago
 
 extra_javascript:
