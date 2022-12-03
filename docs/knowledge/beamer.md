@@ -209,4 +209,13 @@ beamer支持的字体大小有限，仅有8、9、10、11、12、14、17、20pt�
     \end{frame}
     ```
 === "效果图"
+
 	<center><img src="https://s3.uuu.ovh/imgs/2022/12/01/e8fd28993b79928b.png" width="85%"></center>
+
+## 3. 推荐一个主题
+
+```latex
+\usetheme{Madrid}
+\usecolortheme{default}
+```
+
