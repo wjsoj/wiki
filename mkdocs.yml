@@ -49,6 +49,7 @@ theme:
   language: 'zh'
   icon:
     repo: fontawesome/brands/github-alt
+    logo: material/notebook
 
 
 markdown_extensions:
@@ -108,6 +109,8 @@ plugins:
       caption_position: bottom
   - git-revision-date-localized:
       type: timeago
+  - minify:
+      minify_html: true
 
 extra_javascript:
   - js/extra.js
