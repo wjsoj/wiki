@@ -1,0 +1,1582 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="个人wiki" name="description"/>
+<meta content="WJS" name="author"/>
+<link href="http://wjsphy.tk/knowledge/latex/" rel="canonical"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<title>LaTeX基础 - Wiki</title>
+<link href="../../assets/stylesheets/main.472b142f.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.08040f6c.min.css" rel="stylesheet"/>
+<meta content="#ffffff" name="theme-color"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="red" data-md-color-primary="white" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#latex">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="Wiki" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Wiki">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Wiki
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              LaTeX基础
+            
+          </span>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/wjsoj/wiki" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    wjsoj/wiki
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        介绍
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../markdown/">
+        知识技能
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../about/about/">
+        关于
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Wiki" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Wiki">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    Wiki
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/wjsoj/wiki" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    wjsoj/wiki
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1">
+          介绍
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="介绍" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          介绍
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        1.简介
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/start/">
+        2.如何部署
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/mkdocs/">
+        3.原生欢迎页
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/log/">
+        4.更新日志
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+          知识技能
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="知识技能" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          知识技能
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../markdown/">
+        Markdown
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../python/">
+        Python进阶
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../regex/">
+        正则表达式
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4">
+          LaTeX
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="LaTeX" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+          LaTeX
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          LaTeX基础
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        LaTeX基础
+      </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 导言区
+  </a>
+<nav aria-label="1. 导言区" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11">
+    1.1 文档格式
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12">
+    1.2 宏包
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13">
+    1.3 标题信息
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 正文
+  </a>
+<nav aria-label="2. 正文" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21">
+    2.1 目录结构
+  </a>
+<nav aria-label="2.1 目录结构" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#211">
+    2.1.1 摘要
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#212">
+    2.1.2 段落和空行
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#213">
+    2.1.3 段首缩进
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#214">
+    2.1.4 结构
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#215">
+    2.1.5 目录
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#216">
+    2.1.6 页码
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22">
+    2.2 字体设置
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#23">
+    2.3 表格
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#24">
+    2.4 数学公式
+  </a>
+<nav aria-label="2.4 数学公式" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#241">
+    2.4.1 行内公式
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#242">
+    2.4.2 公式块
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#243">
+    2.4.3 常用数学排版记号
+  </a>
+<nav aria-label="2.4.3 常用数学排版记号" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2431">
+    2.4.3.1 空格
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2432">
+    2.4.3.2 字体
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#244">
+    2.4.4 其他格式操作
+  </a>
+<nav aria-label="2.4.4 其他格式操作" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2441-mathjaxlatex">
+    2.4.4.1 多行公式（展示基于mathjax插件，与LaTeX可能有较大出入）
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2442">
+    2.4.4.2 给公式编号
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#245-mathjax">
+    2.4.5 与mathjax的兼容问题
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#25">
+    2.5 插入图片
+  </a>
+<nav aria-label="2.5 插入图片" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#251">
+    2.5.1 路径指定
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#252">
+    2.5.2 可选参数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#253-figure">
+    2.5.3 figure 环境
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#254">
+    2.5.4 文字环绕
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#255">
+    2.5.5 标题
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#256">
+    2.5.6 标签
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#26">
+    2.6 列表
+  </a>
+<nav aria-label="2.6 列表" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#261">
+    2.6.1 无序列表
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#262">
+    2.6.2 有序列表
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#263">
+    2.6.3 自定义标号
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#27">
+    2.7 超链接
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 参考文献
+  </a>
+<nav aria-label="3. 参考文献" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31">
+    3.1 可选参数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32">
+    3.2 添加到目录
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#33">
+    3.3 脚注
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 关键字
+  </a>
+<nav aria-label="4. 关键字" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41">
+    4.1 保留字符
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42">
+    4.2 一些常用的长度参数
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../latex2/">
+        LaTeX进阶操作
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../beamer/">
+        用LaTeX做PPT
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tikz/">
+        TikZ绘图
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+          关于
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="关于" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          关于
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../about/about/">
+        1.关于
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../about/future/">
+        2.未来规划
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../about/ref/">
+        3.参考资料
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 导言区
+  </a>
+<nav aria-label="1. 导言区" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11">
+    1.1 文档格式
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12">
+    1.2 宏包
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13">
+    1.3 标题信息
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 正文
+  </a>
+<nav aria-label="2. 正文" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21">
+    2.1 目录结构
+  </a>
+<nav aria-label="2.1 目录结构" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#211">
+    2.1.1 摘要
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#212">
+    2.1.2 段落和空行
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#213">
+    2.1.3 段首缩进
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#214">
+    2.1.4 结构
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#215">
+    2.1.5 目录
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#216">
+    2.1.6 页码
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22">
+    2.2 字体设置
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#23">
+    2.3 表格
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#24">
+    2.4 数学公式
+  </a>
+<nav aria-label="2.4 数学公式" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#241">
+    2.4.1 行内公式
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#242">
+    2.4.2 公式块
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#243">
+    2.4.3 常用数学排版记号
+  </a>
+<nav aria-label="2.4.3 常用数学排版记号" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2431">
+    2.4.3.1 空格
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2432">
+    2.4.3.2 字体
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#244">
+    2.4.4 其他格式操作
+  </a>
+<nav aria-label="2.4.4 其他格式操作" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2441-mathjaxlatex">
+    2.4.4.1 多行公式（展示基于mathjax插件，与LaTeX可能有较大出入）
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2442">
+    2.4.4.2 给公式编号
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#245-mathjax">
+    2.4.5 与mathjax的兼容问题
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#25">
+    2.5 插入图片
+  </a>
+<nav aria-label="2.5 插入图片" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#251">
+    2.5.1 路径指定
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#252">
+    2.5.2 可选参数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#253-figure">
+    2.5.3 figure 环境
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#254">
+    2.5.4 文字环绕
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#255">
+    2.5.5 标题
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#256">
+    2.5.6 标签
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#26">
+    2.6 列表
+  </a>
+<nav aria-label="2.6 列表" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#261">
+    2.6.1 无序列表
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#262">
+    2.6.2 有序列表
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#263">
+    2.6.3 自定义标号
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#27">
+    2.7 超链接
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 参考文献
+  </a>
+<nav aria-label="3. 参考文献" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31">
+    3.1 可选参数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32">
+    3.2 添加到目录
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#33">
+    3.3 脚注
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 关键字
+  </a>
+<nav aria-label="4. 关键字" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41">
+    4.1 保留字符
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42">
+    4.2 一些常用的长度参数
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/wjsoj/wiki/edit/master/docs/knowledge/latex.md" title="编辑此页">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1 id="latex">LaTeX基础语法<a class="headerlink" href="#latex" title="Permanent link">¶</a></h1>
+<p>以下内容均整理自<a href="https://www.overleaf.com/learn">OverLeaf文档</a></p>
+<h2 id="1">1. 导言区<a class="headerlink" href="#1" title="Permanent link">¶</a></h2>
+<h3 id="11">1.1 文档格式<a class="headerlink" href="#11" title="Permanent link">¶</a></h3>
+<p>中文输入必须指定特定的文档类型：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">\documentclass</span><span class="nb">{</span>ctexart<span class="nb">}</span>
+</code></pre></div>
+<p>如果要指定更多参数（这里设定默认字体大小12pt，A4纸单面打印）：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">\documentclass</span><span class="na">[12pt, a4paper, oneside]</span><span class="nb">{</span>ctexart<span class="nb">}</span>
+</code></pre></div>
+<h3 id="12">1.2 宏包<a class="headerlink" href="#12" title="Permanent link">¶</a></h3>
+<p>如果要插入图片：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+</code></pre></div>
+<p>一些数学的定理环境和更丰富的显示效果：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">\usepackage</span><span class="nb">{</span>amsmath, amsthm, amssymb<span class="nb">}</span>
+</code></pre></div>
+<h3 id="13">1.3 标题信息<a class="headerlink" href="#13" title="Permanent link">¶</a></h3>
+<p><strong>注意：要显示标题信息需要在正文部分添加<code>\maketitle</code>命令</strong></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">\title</span><span class="nb">{</span>Your title<span class="nb">}</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">\author</span><span class="nb">{</span>Your name <span class="k">\thanks</span><span class="nb">{</span>other author<span class="nb">}}</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="k">\date</span><span class="nb">{</span><span class="k">\today</span><span class="nb">}</span>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="k">\maketitle</span>
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+<h2 id="2">2. 正文<a class="headerlink" href="#2" title="Permanent link">¶</a></h2>
+<h3 id="21">2.1 目录结构<a class="headerlink" href="#21" title="Permanent link">¶</a></h3>
+<h4 id="211">2.1.1 摘要<a class="headerlink" href="#211" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">\begin</span><span class="nb">{</span>abstract<span class="nb">}</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>摘要内容
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">\end</span><span class="nb">{</span>abstract<span class="nb">}</span>
+</code></pre></div>
+<h4 id="212">2.1.2 段落和空行<a class="headerlink" href="#212" title="Permanent link">¶</a></h4>
+<p><span class="arithmatex">\(\LaTeX\)</span>默认不自动换行和分段，如果要新建一个新的段落，请使用一个空行。如果要手动换行，可以使用：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">\\</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">\newline</span>
+</code></pre></div>
+<p>如果要在段落之间产生一个间距：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">\bigskip</span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="k">\medskip</span>
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="k">\smallskip</span>
+</code></pre></div>
+<h4 id="213">2.1.3 段首缩进<a class="headerlink" href="#213" title="Permanent link">¶</a></h4>
+<p>在帮助文档中提到：</p>
+<blockquote>
+<p>By default LaTeX does not indent the first paragraph contained in a document section</p>
+</blockquote>
+<p>如果想要控制缩进：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">\setlength</span><span class="nb">{</span><span class="k">\parindent</span><span class="nb">}{</span>20pt<span class="nb">}</span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="k">\indent</span>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="k">\noindent</span>
+</code></pre></div>
+<h4 id="214">2.1.4 结构<a class="headerlink" href="#214" title="Permanent link">¶</a></h4>
+<p>在<code>book</code>类和<code>report</code>类中包含part和chapter两种层级，其他文章类型一般最高级就是<code>section</code></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">\documentclass</span><span class="nb">{</span>book<span class="nb">}</span>
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="k">\part</span>
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="k">\chapter</span>
+<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="k">\section</span>
+<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="k">\subsection</span>
+<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="k">\subsubsection</span>
+<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="k">\paragraph</span>
+<a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="k">\subparagraph</span>
+</code></pre></div>
+<h4 id="215">2.1.5 目录<a class="headerlink" href="#215" title="Permanent link">¶</a></h4>
+<p>想要添加目录，只需要使用命令：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">\tableofcontents</span>
+</code></pre></div>
+<p>默认只生成带编号的标题，如果要添加无编号的标题到目录中：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">\section*</span><span class="nb">{</span>Unnumbered Section<span class="nb">}</span>
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>section<span class="nb">}{</span>Unnumbered Section<span class="nb">}</span>
+</code></pre></div>
+<h4 id="216">2.1.6 页码<a class="headerlink" href="#216" title="Permanent link">¶</a></h4>
+<p>想要修改页码样式，使用命令：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">\pagenumbering</span><span class="nb">{</span>digit type<span class="nb">}</span>
+</code></pre></div>
+<p>可选参数如下表：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>样式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>arabic</code></td>
+<td>阿拉伯数字，默认样式</td>
+</tr>
+<tr>
+<td><code>roman</code></td>
+<td>小写罗马数字</td>
+</tr>
+<tr>
+<td><code>Roman</code></td>
+<td>大写罗马数字</td>
+</tr>
+<tr>
+<td><code>alph</code></td>
+<td>小写英文字母</td>
+</tr>
+<tr>
+<td><code>Alph</code></td>
+<td>大写英文字母</td>
+</tr>
+</tbody>
+</table>
+<p>强行指定当前页码（比如正文重新进行页码排序）或当前页不标记页码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">\setcounter</span><span class="nb">{</span>page<span class="nb">}{</span>2<span class="nb">}</span>
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="k">\thispagestyle</span><span class="nb">{</span>empty<span class="nb">}</span>
+</code></pre></div>
+<h3 id="22">2.2 字体设置<a class="headerlink" href="#22" title="Permanent link">¶</a></h3>
+<p>分别对应粗体、斜体、下划线</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">\textbf</span><span class="nb">{}</span>
+<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="k">\textit</span><span class="nb">{}</span>
+<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="k">\underline</span><span class="nb">{}</span>
+<a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="c">% 在常规文本中斜体，斜体中变常规</span>
+<a href="#__codelineno-14-5" id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="k">\emph</span><span class="nb">{}</span>
+</code></pre></div>
+<p>如果想要修改颜色可以用两种方法：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="c">% 第一种方法，利用RGB值</span>
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="k">\textcolor</span><span class="na">[RGB]</span><span class="nb">{</span>text content<span class="nb">}</span>
+<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="c">% 第二种方法，利用宏包</span>
+<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="k">\usepackage</span><span class="nb">{</span>xcolor<span class="nb">}</span>
+<a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="k">\textcolor</span><span class="na">[blue]</span><span class="nb">{</span>text content<span class="nb">}</span>
+</code></pre></div>
+<h3 id="23">2.3 表格<a class="headerlink" href="#23" title="Permanent link">¶</a></h3>
+<p>建议直接在线生成，<a href="https://www.tablesgenerator.com/">Tables Generator</a></p>
+<p>搭配table环境可以和图片一样添加标题，浮动显示位置，添加引用标签等。下面是一个例子：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="k">\begin</span><span class="nb">{</span>table<span class="nb">}</span>[h!]
+<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="k">\centering</span>
+<a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>||c c c c||<span class="nb">}</span> 
+<a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a> <span class="k">\hline</span>
+<a href="#__codelineno-16-5" id="__codelineno-16-5" name="__codelineno-16-5"></a> Col1 <span class="nb">&amp;</span> Col2 <span class="nb">&amp;</span> Col2 <span class="nb">&amp;</span> Col3 <span class="k">\\</span> [0.5ex] 
+<a href="#__codelineno-16-6" id="__codelineno-16-6" name="__codelineno-16-6"></a> <span class="k">\hline\hline</span>
+<a href="#__codelineno-16-7" id="__codelineno-16-7" name="__codelineno-16-7"></a> 1 <span class="nb">&amp;</span> 6 <span class="nb">&amp;</span> 87837 <span class="nb">&amp;</span> 787 <span class="k">\\</span> 
+<a href="#__codelineno-16-8" id="__codelineno-16-8" name="__codelineno-16-8"></a> 2 <span class="nb">&amp;</span> 7 <span class="nb">&amp;</span> 78 <span class="nb">&amp;</span> 5415 <span class="k">\\</span>
+<a href="#__codelineno-16-9" id="__codelineno-16-9" name="__codelineno-16-9"></a> 3 <span class="nb">&amp;</span> 545 <span class="nb">&amp;</span> 778 <span class="nb">&amp;</span> 7507 <span class="k">\\</span>
+<a href="#__codelineno-16-10" id="__codelineno-16-10" name="__codelineno-16-10"></a> 4 <span class="nb">&amp;</span> 545 <span class="nb">&amp;</span> 18744 <span class="nb">&amp;</span> 7560 <span class="k">\\</span>
+<a href="#__codelineno-16-11" id="__codelineno-16-11" name="__codelineno-16-11"></a> 5 <span class="nb">&amp;</span> 88 <span class="nb">&amp;</span> 788 <span class="nb">&amp;</span> 6344 <span class="k">\\</span> [1ex] 
+<a href="#__codelineno-16-12" id="__codelineno-16-12" name="__codelineno-16-12"></a> <span class="k">\hline</span>
+<a href="#__codelineno-16-13" id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+<a href="#__codelineno-16-14" id="__codelineno-16-14" name="__codelineno-16-14"></a><span class="k">\caption</span><span class="nb">{</span>Table to test captions and labels.<span class="nb">}</span>
+<a href="#__codelineno-16-15" id="__codelineno-16-15" name="__codelineno-16-15"></a><span class="k">\label</span><span class="nb">{</span>table:data<span class="nb">}</span>
+<a href="#__codelineno-16-16" id="__codelineno-16-16" name="__codelineno-16-16"></a><span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
+</code></pre></div>
+<h3 id="24">2.4 数学公式<a class="headerlink" href="#24" title="Permanent link">¶</a></h3>
+<p>建议直接在线生成，<a href="https://www.latexlive.com/">latexlive</a></p>
+<h4 id="241">2.4.1 行内公式<a class="headerlink" href="#241" title="Permanent link">¶</a></h4>
+<p>方法同markdown，如果要展现出行间公式的效果，使用命令：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="s">$</span><span class="nv">\displaystyle</span><span class="s">$</span>
+</code></pre></div>
+<h4 id="242">2.4.2 公式块<a class="headerlink" href="#242" title="Permanent link">¶</a></h4>
+<p>建议用下面两种方式输入：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="sb">\[</span><span class="nb">a^</span><span class="m">2</span><span class="o">+</span><span class="nb">b^</span><span class="m">2</span><span class="nb"> </span><span class="o">=</span><span class="nb"> c^</span><span class="m">2</span><span class="s">\]</span>
+<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="k">\begin</span><span class="nb">{</span>displaymath<span class="nb">}</span>
+<a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a>a<span class="nb">^</span>2+b<span class="nb">^</span>2 = c<span class="nb">^</span>2
+<a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="k">\end</span><span class="nb">{</span>displaymath<span class="nb">}</span>
+</code></pre></div>
+<h4 id="243">2.4.3 常用数学排版记号<a class="headerlink" href="#243" title="Permanent link">¶</a></h4>
+<h5 id="2431">2.4.3.1 空格<a class="headerlink" href="#2431" title="Permanent link">¶</a></h5>
+<table>
+<thead>
+<tr>
+<th align="left">LATEX code</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>\quad</code></td>
+<td align="left">space equal to the current font size (= 18 <a href="https://www.overleaf.com/learn/latex/Lengths_in_LaTeX">mu</a>)</td>
+</tr>
+<tr>
+<td align="left"><code>\,</code></td>
+<td align="left">3/18 of <code>\quad</code> (= 3 mu)</td>
+</tr>
+<tr>
+<td align="left"><code>\:</code></td>
+<td align="left">4/18 of <code>\quad</code> (= 4 mu)</td>
+</tr>
+<tr>
+<td align="left"><code>\;</code></td>
+<td align="left">5/18 of <code>\quad</code> (= 5 mu)</td>
+</tr>
+<tr>
+<td align="left"><code>\!</code></td>
+<td align="left">-3/18 of <code>\quad</code> (= -3 mu)</td>
+</tr>
+<tr>
+<td align="left"><code>\</code>(space after backslash!)</td>
+<td align="left">equivalent of space in normal text</td>
+</tr>
+<tr>
+<td align="left"><code>\qquad</code></td>
+<td align="left">twice of <code>\quad</code> (= 36 mu)</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2432">2.4.3.2 字体<a class="headerlink" href="#2432" title="Permanent link">¶</a></h5>
+<table>
+<thead>
+<tr>
+<th>字体</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\mathbb{}</code></td>
+<td>对数域的表示</td>
+</tr>
+<tr>
+<td><code>\texfrf{}</code></td>
+<td>公式内文本（建议用英语）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="244">2.4.4 其他格式操作<a class="headerlink" href="#244" title="Permanent link">¶</a></h4>
+<h5 id="2441-mathjaxlatex">2.4.4.1 多行公式（展示基于mathjax插件，与LaTeX可能有较大出入）<a class="headerlink" href="#2441-mathjaxlatex" title="Permanent link">¶</a></h5>
+<p>使用<code>split</code>或者<code>align</code>环境，用<code>&amp;</code>标明垂直对齐的位置：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="sb">$$</span><span class="nb"></span>
+<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="nv">\begin</span><span class="nb">{align}</span>
+<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="nb">A &amp; </span><span class="o">=</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{</span><span class="nv">\pi</span><span class="nb"> r^</span><span class="m">2</span><span class="nb">}{</span><span class="m">2</span><span class="nb">} </span><span class="nv">\\</span><span class="nb"></span>
+<a href="#__codelineno-19-4" id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="nb"> &amp; </span><span class="o">=</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{</span><span class="m">1</span><span class="nb">}{</span><span class="m">2</span><span class="nb">} </span><span class="nv">\pi</span><span class="nb"> r^</span><span class="m">2</span><span class="nb"></span>
+<a href="#__codelineno-19-5" id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="nv">\end</span><span class="nb">{align}</span>
+<a href="#__codelineno-19-6" id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="s">$$</span>
+</code></pre></div>
+<div class="arithmatex">\[
+\begin{align}
+A &amp; = \frac{\pi r^2}{2} \\\\
+ &amp; = \frac{1}{2} \pi r^2
+\end{align}
+\]</div>
+<p><code>multiline</code>则会将第一行左对齐，第二行右对齐，例如：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="k">\begin</span><span class="nb">{</span>multline<span class="nb">}</span>
+<a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a>p(x) = 3x<span class="nb">^</span>6 + 14x<span class="nb">^</span>5y + 590x<span class="nb">^</span>4y<span class="nb">^</span>2 + 19x<span class="nb">^</span>3y<span class="nb">^</span>3<span class="k">\\\\</span>
+<a href="#__codelineno-20-3" id="__codelineno-20-3" name="__codelineno-20-3"></a>- 12x<span class="nb">^</span>2y<span class="nb">^</span>4 - 12xy<span class="nb">^</span>5 + 2y<span class="nb">^</span>6 - a<span class="nb">^</span>3b<span class="nb">^</span>3
+<a href="#__codelineno-20-4" id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="k">\end</span><span class="nb">{</span>multline<span class="nb">}</span>
+</code></pre></div>
+<div class="arithmatex">\[
+\begin{multline}
+p(x) = 3x^6 + 14x^5y + 590x^4y^2 + 19x^3y^3\\\\
+- 12x^2y^4 - 12xy^5 + 2y^6 - a^3b^3
+\end{multline}
+\]</div>
+<h5 id="2442">2.4.4.2 给公式编号<a class="headerlink" href="#2442" title="Permanent link">¶</a></h5>
+<p>使用<code>equation</code>环境以及上面提到的多行公式环境都会自动产生一个编号，如果不希望保留编号，请不使用定理环境或者在环境词的后面加<code>*</code>号。如果需要引用公式，添加<code>\label</code>标签即可。</p>
+<h4 id="245-mathjax">2.4.5 与mathjax的兼容问题<a class="headerlink" href="#245-mathjax" title="Permanent link">¶</a></h4>
+<p>不同版本还有较大出入，目前还在研究。</p>
+<h3 id="25">2.5 插入图片<a class="headerlink" href="#25" title="Permanent link">¶</a></h3>
+<p>要插入图片，请在导言区加入宏包并指定路径（非必须，建议这么做）：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+<a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="c">% 注意下面一行括号内的写法</span>
+<a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="k">\graphicspath</span><span class="nb">{{</span>images/<span class="nb">}}</span>
+</code></pre></div>
+<p>下面是正文中插入图片的一个例子：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[htbp]
+<a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a>    <span class="k">\centering</span>
+<a href="#__codelineno-22-3" id="__codelineno-22-3" name="__codelineno-22-3"></a>    <span class="k">\includegraphics</span><span class="na">[width=0.6\textwidth]</span><span class="nb">{</span>img.jpg<span class="nb">}</span>
+<a href="#__codelineno-22-4" id="__codelineno-22-4" name="__codelineno-22-4"></a>    <span class="k">\caption</span><span class="nb">{</span>图片标题<span class="nb">}</span>
+<a href="#__codelineno-22-5" id="__codelineno-22-5" name="__codelineno-22-5"></a>    <span class="k">\label</span><span class="nb">{</span>fig:1<span class="nb">}</span>
+<a href="#__codelineno-22-6" id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<a href="#__codelineno-22-7" id="__codelineno-22-7" name="__codelineno-22-7"></a>
+<a href="#__codelineno-22-8" id="__codelineno-22-8" name="__codelineno-22-8"></a>如果想要在正文中引用图片，只需要输入<span class="k">\ref</span><span class="nb">{</span>fig:1<span class="nb">}</span>
+<a href="#__codelineno-22-9" id="__codelineno-22-9" name="__codelineno-22-9"></a>还可以通过<span class="k">\pageref</span><span class="nb">{</span>fig:1<span class="nb">}</span>获取图片所在的页面页码
+</code></pre></div>
+<p>其中，<code>[htbp]</code>参数会自动选择最优位置，<code>img.jpg</code>应当位于导言区规定的目录中，扩展名可以省略，<code>\label</code>指定了图片在引用时使用的标签，序号会自动添加。</p>
+<h4 id="251">2.5.1 路径指定<a class="headerlink" href="#251" title="Permanent link">¶</a></h4>
+<p>两种方式，第一种会在出现了<code>\includegraphics</code>命令的代码所在目录下寻找，第二种则只会在<code>main.tex</code>同级的目录下寻找：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="k">\graphicspath</span><span class="nb">{{</span>images/<span class="nb">}}</span>
+<a href="#__codelineno-23-2" id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="k">\graphicspath</span><span class="nb">{{</span>./images/<span class="nb">}}</span>
+</code></pre></div>
+<p>如果在本地编辑器上使用，可以用绝对路径。</p>
+<p>如果需要多个图片目录：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="k">\graphicspath</span><span class="nb">{</span> <span class="nb">{</span>./images1/<span class="nb">}{</span>./images2/<span class="nb">}</span> <span class="nb">}</span>
+</code></pre></div>
+<h4 id="252">2.5.2 可选参数<a class="headerlink" href="#252" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="c">% 等比例缩放</span>
+<a href="#__codelineno-25-2" id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="k">\includegraphics</span><span class="na">[scale=1.5]</span><span class="nb">{</span>img<span class="nb">}</span>
+<a href="#__codelineno-25-3" id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="c">% 强制指定宽度和高度（单独指定时按比例进行缩放）</span>
+<a href="#__codelineno-25-4" id="__codelineno-25-4" name="__codelineno-25-4"></a><span class="k">\includegraphics</span><span class="na">[width=4cm, height=3cm]</span><span class="nb">{</span>img<span class="nb">}</span>
+<a href="#__codelineno-25-5" id="__codelineno-25-5" name="__codelineno-25-5"></a><span class="c">% 利用LaTeX默认参数</span>
+<a href="#__codelineno-25-6" id="__codelineno-25-6" name="__codelineno-25-6"></a><span class="k">\includegraphics</span><span class="na">[width=\textwidth]</span><span class="nb">{</span>img<span class="nb">}</span>
+<a href="#__codelineno-25-7" id="__codelineno-25-7" name="__codelineno-25-7"></a><span class="k">\columnsep</span>, <span class="k">\linewidth</span>, <span class="k">\textheight</span>, <span class="k">\paperheight</span> ...
+<a href="#__codelineno-25-8" id="__codelineno-25-8" name="__codelineno-25-8"></a><span class="c">% 旋转指定角度（逆时针）</span>
+<a href="#__codelineno-25-9" id="__codelineno-25-9" name="__codelineno-25-9"></a><span class="k">\includegraphics</span><span class="na">[angle=45]</span><span class="nb">{</span>img<span class="nb">}</span>
+</code></pre></div>
+<h4 id="253-figure">2.5.3 figure 环境<a class="headerlink" href="#253-figure" title="Permanent link">¶</a></h4>
+<p>在需要对图片的出现位置做更精细的控制时，就需要使用figure环境，当参数为<code>[htbp]</code>或空白时，<span class="arithmatex">\(\LaTeX\)</span>会自动为你选择图片出现的最优位置，其他可选的参数及意义如表：</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Parameter</strong></th>
+<th align="left"><strong>Position</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">h</td>
+<td align="left">Place the float <em>here</em></td>
+</tr>
+<tr>
+<td align="center">t</td>
+<td align="left">Position at the <em>top</em> of the page.</td>
+</tr>
+<tr>
+<td align="center">b</td>
+<td align="left">Position at the <em>bottom</em> of the page.</td>
+</tr>
+<tr>
+<td align="center">p</td>
+<td align="left">Put on a special <em>page</em> for floats only.</td>
+</tr>
+<tr>
+<td align="center">!</td>
+<td align="left">Override internal parameters LaTeX uses for determining "good" float positions.</td>
+</tr>
+<tr>
+<td align="center">H</td>
+<td align="left">Places the float at precisely the location in the LATEX code. Requires the <code>float</code> package, though may cause problems occasionally. This is somewhat equivalent to <code>h!</code>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="254">2.5.4 文字环绕<a class="headerlink" href="#254" title="Permanent link">¶</a></h4>
+<p>在导言区添加：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-26-1" id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="k">\usepackage</span><span class="nb">{</span>wrapfig<span class="nb">}</span>
+</code></pre></div>
+<p>图片位于文字右侧：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-27-1" id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="k">\begin</span><span class="nb">{</span>wrapfigure<span class="nb">}{</span>r<span class="nb">}{</span>0.25<span class="k">\textwidth</span><span class="nb">}</span>
+<a href="#__codelineno-27-2" id="__codelineno-27-2" name="__codelineno-27-2"></a>    <span class="k">\centering</span>
+<a href="#__codelineno-27-3" id="__codelineno-27-3" name="__codelineno-27-3"></a>    <span class="k">\includegraphics</span><span class="na">[width=0.25\textwidth]</span><span class="nb">{</span>mesh<span class="nb">}</span>
+<a href="#__codelineno-27-4" id="__codelineno-27-4" name="__codelineno-27-4"></a><span class="k">\end</span><span class="nb">{</span>wrapfigure<span class="nb">}</span>
+</code></pre></div>
+<p>可选参数 <strong>（大写表示浮动图片）</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Parameter</strong></th>
+<th><strong>Position</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">l L</td>
+<td>right side of the text</td>
+</tr>
+<tr>
+<td align="center">r R</td>
+<td>left side of the text</td>
+</tr>
+<tr>
+<td align="center">i I</td>
+<td>inside edge–near the binding (in a <em>twoside</em> document)</td>
+</tr>
+<tr>
+<td align="center">o O</td>
+<td>outside edge–far from the binding</td>
+</tr>
+</tbody>
+</table>
+<h4 id="255">2.5.5 标题<a class="headerlink" href="#255" title="Permanent link">¶</a></h4>
+<p>标题的位置取决于<code>\caption</code>和<code>\includegraphics</code>命令的相对位置。</p>
+<p>如果想要把标题显示在侧边：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-28-1" id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="k">\usepackage</span><span class="na">[rightcaption]</span><span class="nb">{</span>sidecap<span class="nb">}</span>
+<a href="#__codelineno-28-2" id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="c">% 或者 \usepackage[leftcaption]{sidecap}</span>
+<a href="#__codelineno-28-3" id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="k">\begin</span><span class="nb">{</span>SCfigure<span class="nb">}</span>[h]
+<a href="#__codelineno-28-4" id="__codelineno-28-4" name="__codelineno-28-4"></a>    <span class="k">\caption</span><span class="nb">{</span>标题<span class="nb">}</span>
+<a href="#__codelineno-28-5" id="__codelineno-28-5" name="__codelineno-28-5"></a>    <span class="k">\includegraphics</span><span class="na">[width=0.6\textwidth]</span><span class="nb">{</span>universe<span class="nb">}</span>
+<a href="#__codelineno-28-6" id="__codelineno-28-6" name="__codelineno-28-6"></a><span class="k">\end</span><span class="nb">{</span>SCfigure<span class="nb">}</span>
+</code></pre></div>
+<h4 id="256">2.5.6 标签<a class="headerlink" href="#256" title="Permanent link">¶</a></h4>
+<p>熟悉一下三个命令：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-29-1" id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="k">\label</span><span class="nb">{</span>fig:img<span class="nb">}</span>
+<a href="#__codelineno-29-2" id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="k">\ref</span><span class="nb">{</span>fig:img<span class="nb">}</span>
+<a href="#__codelineno-29-3" id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="k">\pageref</span><span class="nb">{</span>fig:img<span class="nb">}</span>
+</code></pre></div>
+<p>如果需要生成图片列表（只会列出有标题的图片）：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-30-1" id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="k">\listoffigures</span>
+</code></pre></div>
+<h3 id="26">2.6 列表<a class="headerlink" href="#26" title="Permanent link">¶</a></h3>
+<h4 id="261">2.6.1 无序列表<a class="headerlink" href="#261" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-31-1" id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<a href="#__codelineno-31-2" id="__codelineno-31-2" name="__codelineno-31-2"></a>  <span class="k">\item</span> The individual entries are indicated with a black dot, a so-called bullet.
+<a href="#__codelineno-31-3" id="__codelineno-31-3" name="__codelineno-31-3"></a>  <span class="k">\item</span> The text in the entries may be of any length.
+<a href="#__codelineno-31-4" id="__codelineno-31-4" name="__codelineno-31-4"></a><span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+</code></pre></div>
+<h4 id="262">2.6.2 有序列表<a class="headerlink" href="#262" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-32-1" id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+<a href="#__codelineno-32-2" id="__codelineno-32-2" name="__codelineno-32-2"></a>  <span class="k">\item</span> The individual entries are indicated with a number.
+<a href="#__codelineno-32-3" id="__codelineno-32-3" name="__codelineno-32-3"></a>  <span class="k">\item</span> The text in the entries may be of any length.
+<a href="#__codelineno-32-4" id="__codelineno-32-4" name="__codelineno-32-4"></a><span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</code></pre></div>
+<h4 id="263">2.6.3 自定义标号<a class="headerlink" href="#263" title="Permanent link">¶</a></h4>
+<p>单个元素：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-33-1" id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="k">\item</span><span class="na">[label text]</span>
+</code></pre></div>
+<p>改变一层列表的标号或格式：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-34-1" id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\labelenumii</span><span class="nb">}{</span><span class="k">\arabic</span><span class="nb">{</span>enumi<span class="nb">}</span>.<span class="k">\arabic</span><span class="nb">{</span>enumii<span class="nb">}}</span>
+<a href="#__codelineno-34-2" id="__codelineno-34-2" name="__codelineno-34-2"></a><span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\labelenumiii</span><span class="nb">}{</span><span class="k">\arabic</span><span class="nb">{</span>enumi<span class="nb">}</span>.<span class="k">\arabic</span><span class="nb">{</span>enumii<span class="nb">}</span>.<span class="k">\arabic</span><span class="nb">{</span>enumiii<span class="nb">}}</span>
+<a href="#__codelineno-34-3" id="__codelineno-34-3" name="__codelineno-34-3"></a><span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\labelenumiv</span><span class="nb">}{</span><span class="k">\arabic</span><span class="nb">{</span>enumi<span class="nb">}</span>.<span class="k">\arabic</span><span class="nb">{</span>enumii<span class="nb">}</span>.<span class="k">\arabic</span><span class="nb">{</span>enumiii<span class="nb">}</span>.<span class="k">\arabic</span><span class="nb">{</span>enumiv<span class="nb">}}</span>
+<a href="#__codelineno-34-4" id="__codelineno-34-4" name="__codelineno-34-4"></a><span class="c">% 显示结果</span>
+<a href="#__codelineno-34-5" id="__codelineno-34-5" name="__codelineno-34-5"></a><span class="c">% 第二层 3.1</span>
+<a href="#__codelineno-34-6" id="__codelineno-34-6" name="__codelineno-34-6"></a><span class="c">% 第三层 3.1.1</span>
+<a href="#__codelineno-34-7" id="__codelineno-34-7" name="__codelineno-34-7"></a><span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+<a href="#__codelineno-34-8" id="__codelineno-34-8" name="__codelineno-34-8"></a><span class="k">\item</span> One
+<a href="#__codelineno-34-9" id="__codelineno-34-9" name="__codelineno-34-9"></a><span class="k">\item</span> Two
+<a href="#__codelineno-34-10" id="__codelineno-34-10" name="__codelineno-34-10"></a><span class="k">\item</span> Three
+<a href="#__codelineno-34-11" id="__codelineno-34-11" name="__codelineno-34-11"></a><span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+<a href="#__codelineno-34-12" id="__codelineno-34-12" name="__codelineno-34-12"></a>    <span class="k">\item</span> Three point one
+<a href="#__codelineno-34-13" id="__codelineno-34-13" name="__codelineno-34-13"></a>    <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+<a href="#__codelineno-34-14" id="__codelineno-34-14" name="__codelineno-34-14"></a>    <span class="k">\item</span> Three point one, point one
+<a href="#__codelineno-34-15" id="__codelineno-34-15" name="__codelineno-34-15"></a>        <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+<a href="#__codelineno-34-16" id="__codelineno-34-16" name="__codelineno-34-16"></a>        <span class="k">\item</span> Three point one, point one, point one
+<a href="#__codelineno-34-17" id="__codelineno-34-17" name="__codelineno-34-17"></a>        <span class="k">\item</span> Three point one, point one, point two
+<a href="#__codelineno-34-18" id="__codelineno-34-18" name="__codelineno-34-18"></a>        <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+<a href="#__codelineno-34-19" id="__codelineno-34-19" name="__codelineno-34-19"></a>    <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+<a href="#__codelineno-34-20" id="__codelineno-34-20" name="__codelineno-34-20"></a><span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+<a href="#__codelineno-34-21" id="__codelineno-34-21" name="__codelineno-34-21"></a><span class="k">\item</span> Four
+<a href="#__codelineno-34-22" id="__codelineno-34-22" name="__codelineno-34-22"></a><span class="k">\item</span> Five
+<a href="#__codelineno-34-23" id="__codelineno-34-23" name="__codelineno-34-23"></a><span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</code></pre></div>
+<p>可选的样式：</p>
+<table>
+<thead>
+<tr>
+<th align="left">样式</th>
+<th align="center">命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">阿拉伯数字</td>
+<td align="center"><code>\arabic{*counter variable*}</code></td>
+</tr>
+<tr>
+<td align="left">小写罗马数字</td>
+<td align="center"><code>\roman{*counter variable*}</code></td>
+</tr>
+<tr>
+<td align="left">大写罗马数字</td>
+<td align="center"><code>\Roman{*counter variable*}</code></td>
+</tr>
+<tr>
+<td align="left">大写字母</td>
+<td align="center"><code>\Alph{*counter variable*}</code></td>
+</tr>
+<tr>
+<td align="left">小写字母</td>
+<td align="center"><code>\alph{*counter variable*}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="27">2.7 超链接<a class="headerlink" href="#27" title="Permanent link">¶</a></h3>
+<p>要使用超链接，请在导言区加入：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-35-1" id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="k">\usepackage</span><span class="na">[colorlinks,linkcolor=black,urlcolor=blue]</span><span class="nb">{</span>hyperref<span class="nb">}</span>
+</code></pre></div>
+<p>另一种配置方式：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-36-1" id="__codelineno-36-1" name="__codelineno-36-1"></a><span class="k">\usepackage</span><span class="nb">{</span>hyperref<span class="nb">}</span>
+<a href="#__codelineno-36-2" id="__codelineno-36-2" name="__codelineno-36-2"></a><span class="k">\hypersetup</span><span class="nb">{</span>
+<a href="#__codelineno-36-3" id="__codelineno-36-3" name="__codelineno-36-3"></a>    colorlinks=true,
+<a href="#__codelineno-36-4" id="__codelineno-36-4" name="__codelineno-36-4"></a>    linkcolor=blue,
+<a href="#__codelineno-36-5" id="__codelineno-36-5" name="__codelineno-36-5"></a>    filecolor=magenta,      
+<a href="#__codelineno-36-6" id="__codelineno-36-6" name="__codelineno-36-6"></a>    urlcolor=cyan,
+<a href="#__codelineno-36-7" id="__codelineno-36-7" name="__codelineno-36-7"></a>    pdftitle=<span class="nb">{</span>Overleaf Example<span class="nb">}</span>,
+<a href="#__codelineno-36-8" id="__codelineno-36-8" name="__codelineno-36-8"></a>    pdfpagemode=FullScreen,
+<a href="#__codelineno-36-9" id="__codelineno-36-9" name="__codelineno-36-9"></a>    <span class="nb">}</span>
+</code></pre></div>
+<p><code>urlcolor</code>项指定了网页链接的显示颜色，如果要插入网页链接，请使用：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-37-1" id="__codelineno-37-1" name="__codelineno-37-1"></a><span class="k">\href</span><span class="nb">{</span>https://wjsoj.github.io/wiki/<span class="nb">}{</span>主页<span class="nb">}</span>
+<a href="#__codelineno-37-2" id="__codelineno-37-2" name="__codelineno-37-2"></a><span class="c">% 或者</span>
+<a href="#__codelineno-37-3" id="__codelineno-37-3" name="__codelineno-37-3"></a><span class="k">\url</span><span class="nb">{</span>https://wjsoj.github.io/wiki/<span class="nb">}</span>
+</code></pre></div>
+<p><code>filecolor</code>指定了在文章中调用文件的链接的显示方式，例如下面这行命令会链接到当前目录下一个<code>file.txt</code>的文件：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-38-1" id="__codelineno-38-1" name="__codelineno-38-1"></a><span class="k">\href</span><span class="nb">{</span>run:./file.txt<span class="nb">}{</span>File.txt<span class="nb">}</span>
+</code></pre></div>
+<p><code>linkcolor</code>项指定了一般的链接的颜色（如目录页、参考文献的DO.I编号等）</p>
+<p>其他关于pdf viewer的配置如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">Option</th>
+<th align="left">Default value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>bookmarks</code></td>
+<td align="left">true</td>
+<td align="left">Acrobat bookmarks are written, similar to the table of contents.</td>
+</tr>
+<tr>
+<td align="left"><code>bookmarksopen</code></td>
+<td align="left">false</td>
+<td align="left">Bookmarks are shown with all sub-trees expanded.</td>
+</tr>
+<tr>
+<td align="left"><code>pdfpagemode</code></td>
+<td align="left">empty</td>
+<td align="left">Determines how the file is opened. Possibilities are UseThumbs (Thumbnails), UseOutlines (Bookmarks) and FullScreen.</td>
+</tr>
+<tr>
+<td align="left"><code>pdftitle</code></td>
+<td align="left"></td>
+<td align="left">Sets the document title.</td>
+</tr>
+<tr>
+<td align="left"><code>pdfauthor</code></td>
+<td align="left"></td>
+<td align="left">Sets the document Author.</td>
+</tr>
+<tr>
+<td align="left"><code>pdfstartpage</code></td>
+<td align="left">1</td>
+<td align="left">Determines on which page the PDF file is opened.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3">3. 参考文献<a class="headerlink" href="#3" title="Permanent link">¶</a></h2>
+<p>根据overleaf的官方帮助文档，使用<code>biblatex</code>能提供更好的参考文献引用体验。</p>
+<p>下面是一个例子：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-39-1" id="__codelineno-39-1" name="__codelineno-39-1"></a><span class="k">\usepackage</span><span class="na">[backend=bibtex,style=numeric,sorting=none,natbib=true]</span><span class="nb">{</span>biblatex<span class="nb">}</span>
+<a href="#__codelineno-39-2" id="__codelineno-39-2" name="__codelineno-39-2"></a><span class="k">\addbibresource</span><span class="nb">{</span>sample.bib<span class="nb">}</span> <span class="c">%Import the bibliography file</span>
+<a href="#__codelineno-39-3" id="__codelineno-39-3" name="__codelineno-39-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<a href="#__codelineno-39-4" id="__codelineno-39-4" name="__codelineno-39-4"></a>Let's cite! Einstein's journal paper <span class="k">\cite</span><span class="nb">{</span>einstein<span class="nb">}</span> and Dirac's
+<a href="#__codelineno-39-5" id="__codelineno-39-5" name="__codelineno-39-5"></a>book <span class="k">\cite</span><span class="nb">{</span>dirac<span class="nb">}</span> are physics-related items. 
+<a href="#__codelineno-39-6" id="__codelineno-39-6" name="__codelineno-39-6"></a><span class="k">\printbibliography</span> <span class="c">%Prints bibliography</span>
+<a href="#__codelineno-39-7" id="__codelineno-39-7" name="__codelineno-39-7"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+<p>另一种方法（初学者建议用这个）：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-40-1" id="__codelineno-40-1" name="__codelineno-40-1"></a><span class="c">% 在\end{document}前面加入：</span>
+<a href="#__codelineno-40-2" id="__codelineno-40-2" name="__codelineno-40-2"></a><span class="k">\bibliography</span><span class="nb">{</span>sample.bib<span class="nb">}</span>
+<a href="#__codelineno-40-3" id="__codelineno-40-3" name="__codelineno-40-3"></a><span class="c">% 按引用位置排序</span>
+<a href="#__codelineno-40-4" id="__codelineno-40-4" name="__codelineno-40-4"></a><span class="k">\bibliographystyle</span><span class="nb">{</span>unsrt<span class="nb">}</span>
+</code></pre></div>
+<p>其他可选参数：</p>
+<table>
+<thead>
+<tr>
+<th>option</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>plain</code></td>
+<td>按字母的顺序排列，比较次序为作者、年度和标题.</td>
+</tr>
+<tr>
+<td><code>unsrt</code></td>
+<td>样式同plain，只是按照引用的先后排序.</td>
+</tr>
+<tr>
+<td><code>alpha</code></td>
+<td>用作者名首字母+年份后两位作标号，以字母顺序排序.</td>
+</tr>
+<tr>
+<td><code>abbrv</code></td>
+<td>类似plain，将月份全拼改为缩写，更显紧凑.</td>
+</tr>
+<tr>
+<td><code>ieeetr</code></td>
+<td>国际电气电子工程师协会期刊样式.</td>
+</tr>
+<tr>
+<td><code>acm</code></td>
+<td>美国计算机学会期刊样式.</td>
+</tr>
+<tr>
+<td><code>siam</code></td>
+<td>美国工业和应用数学学会期刊样式.</td>
+</tr>
+<tr>
+<td><code>apalike</code></td>
+<td>美国心理学学会期刊样式.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="31">3.1 可选参数<a class="headerlink" href="#31" title="Permanent link">¶</a></h3>
+<p><strong>（在VS Code里其实是必选参数，而且必须用<code>bibtex</code>编译，悲）</strong></p>
+<p>下面是另一个例子：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-41-1" id="__codelineno-41-1" name="__codelineno-41-1"></a><span class="k">\usepackage</span>[
+<a href="#__codelineno-41-2" id="__codelineno-41-2" name="__codelineno-41-2"></a>backend=biber,
+<a href="#__codelineno-41-3" id="__codelineno-41-3" name="__codelineno-41-3"></a>style=alphabetic,
+<a href="#__codelineno-41-4" id="__codelineno-41-4" name="__codelineno-41-4"></a>sorting=ynt
+<a href="#__codelineno-41-5" id="__codelineno-41-5" name="__codelineno-41-5"></a>]<span class="nb">{</span>biblatex<span class="nb">}</span>
+<a href="#__codelineno-41-6" id="__codelineno-41-6" name="__codelineno-41-6"></a><span class="c">% 建议用[backend=bibtex,style=numeric,sorting=none,natbib=true]</span>
+<a href="#__codelineno-41-7" id="__codelineno-41-7" name="__codelineno-41-7"></a><span class="c">% 按数字显示，按引用位置排序</span>
+<a href="#__codelineno-41-8" id="__codelineno-41-8" name="__codelineno-41-8"></a><span class="k">\addbibresource</span><span class="nb">{</span>sample.bib<span class="nb">}</span>
+</code></pre></div>
+<p>其中<code>style</code>指定了结尾显示文献列表和在文本中引用文献时的格式，其他格式请参考<a href="https://www.overleaf.com/learn/latex/Biblatex_bibliography_styles">overleaf帮助文档</a></p>
+<p><code>sorting</code>参数指定了参考文献排序的依据，可选的参数如表：</p>
+<table>
+<thead>
+<tr>
+<th align="left">option</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>nty</code></td>
+<td align="left">sort by name, title, year</td>
+</tr>
+<tr>
+<td align="left"><code>nyt</code></td>
+<td align="left">sort by name, year, title</td>
+</tr>
+<tr>
+<td align="left"><code>nyvt</code></td>
+<td align="left">sort by name, year, volume, title</td>
+</tr>
+<tr>
+<td align="left"><code>anyt</code></td>
+<td align="left">sort by alphabetic label, name, year, title</td>
+</tr>
+<tr>
+<td align="left"><code>anyvt</code></td>
+<td align="left">sort by alphabetic label, name, year, volume, title</td>
+</tr>
+<tr>
+<td align="left"><code>ydnt</code></td>
+<td align="left">sort by year (descending), name, title</td>
+</tr>
+<tr>
+<td align="left"><code>none</code></td>
+<td align="left">entries are processed in citation order</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32">3.2 添加到目录<a class="headerlink" href="#32" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-42-1" id="__codelineno-42-1" name="__codelineno-42-1"></a><span class="k">\printbibliography</span>[
+<a href="#__codelineno-42-2" id="__codelineno-42-2" name="__codelineno-42-2"></a>heading=bibintoc,
+<a href="#__codelineno-42-3" id="__codelineno-42-3" name="__codelineno-42-3"></a>title=<span class="nb">{</span>Whole bibliography<span class="nb">}</span>]
+</code></pre></div>
+<p>如果参考文献分为多个部分，可以使用副标题：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-43-1" id="__codelineno-43-1" name="__codelineno-43-1"></a><span class="k">\printbibliography</span><span class="na">[heading=subbibintoc,type=article,title={Articles only}]</span>
+</code></pre></div>
+<h3 id="33">3.3 脚注<a class="headerlink" href="#33" title="Permanent link">¶</a></h3>
+<p>使用<code>\footnote</code>命令，格式为：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-44-1" id="__codelineno-44-1" name="__codelineno-44-1"></a><span class="k">\footnote</span><span class="nb">{</span>注释内容<span class="nb">}</span>
+</code></pre></div>
+<p>注释会自动加在页面底部并编号。</p>
+<h2 id="4">4. 关键字<a class="headerlink" href="#4" title="Permanent link">¶</a></h2>
+<h3 id="41">4.1 保留字符<a class="headerlink" href="#41" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-45-1" id="__codelineno-45-1" name="__codelineno-45-1"></a># <span class="s">$</span><span class="nb"> </span><span class="c">% ^ &amp; _ { } \</span>
+</code></pre></div>
+<p>如果想显示大括号建议使用<code>\brace</code>，也均可以使用转义字符<code>\</code>输出。</p>
+<p>如果要输出反斜杠和波浪线    ，利用公式环境：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-46-1" id="__codelineno-46-1" name="__codelineno-46-1"></a><span class="s">$</span><span class="nv">\backslash</span><span class="s">$</span>
+<a href="#__codelineno-46-2" id="__codelineno-46-2" name="__codelineno-46-2"></a><span class="s">$</span><span class="nv">\sim</span><span class="s">$</span>
+</code></pre></div>
+<h3 id="42">4.2 一些常用的长度参数<a class="headerlink" href="#42" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">Abbreviation</th>
+<th align="left">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>pt</code></td>
+<td align="left">A point, is the default length unit. About 0.3515mm</td>
+</tr>
+<tr>
+<td align="left"><code>mm</code></td>
+<td align="left">a millimetre</td>
+</tr>
+<tr>
+<td align="left"><code>cm</code></td>
+<td align="left">a centimetre</td>
+</tr>
+<tr>
+<td align="left"><code>in</code></td>
+<td align="left">an inch</td>
+</tr>
+<tr>
+<td align="left"><code>ex</code></td>
+<td align="left">the height of an <strong>x</strong> in the current font</td>
+</tr>
+<tr>
+<td align="left"><code>em</code></td>
+<td align="left">the width of an <strong>m</strong> in the current font</td>
+</tr>
+<tr>
+<td align="left"><code>\columnsep</code></td>
+<td align="left">distance between columns</td>
+</tr>
+<tr>
+<td align="left"><code>\columnwidth</code></td>
+<td align="left">width of the column</td>
+</tr>
+<tr>
+<td align="left"><code>\linewidth</code></td>
+<td align="left">width of the line in the current environment</td>
+</tr>
+<tr>
+<td align="left"><code>\paperwidth</code></td>
+<td align="left">width of the page</td>
+</tr>
+<tr>
+<td align="left"><code>\paperheight</code></td>
+<td align="left">height of the page</td>
+</tr>
+<tr>
+<td align="left"><code>\textwidth</code></td>
+<td align="left">width of the text</td>
+</tr>
+<tr>
+<td align="left"><code>\textheight</code></td>
+<td align="left">height of the text</td>
+</tr>
+</tbody>
+</table>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            回到页面顶部
+          </a>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: 正则表达式" class="md-footer__link md-footer__link--prev" href="../regex/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                上一页
+              </span>
+              正则表达式
+            </div>
+</div>
+</a>
+<a aria-label="下一页: LaTeX进阶操作" class="md-footer__link md-footer__link--next" href="../latex2/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                下一页
+              </span>
+              LaTeX进阶操作
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2022 - 2023 WJS
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "navigation.instant", "navigation.tracking", "search.share", "toc.follow", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+<script src="../../js/extra.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

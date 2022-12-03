@@ -1,0 +1,552 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="个人wiki" name="description"/>
+<meta content="WJS" name="author"/>
+<link href="http://wjsphy.tk/knowledge/regex/" rel="canonical"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<title>正则表达式 - Wiki</title>
+<link href="../../assets/stylesheets/main.472b142f.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.08040f6c.min.css" rel="stylesheet"/>
+<meta content="#ffffff" name="theme-color"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="red" data-md-color-primary="white" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="Wiki" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Wiki">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Wiki
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              正则表达式
+            
+          </span>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/wjsoj/wiki" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    wjsoj/wiki
+  </div>
+</a>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        介绍
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../markdown/">
+        知识技能
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../about/about/">
+        关于
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Wiki" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Wiki">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    Wiki
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/wjsoj/wiki" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    wjsoj/wiki
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1">
+          介绍
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="介绍" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          介绍
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        1.简介
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/start/">
+        2.如何部署
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/mkdocs/">
+        3.原生欢迎页
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/log/">
+        4.更新日志
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+          知识技能
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="知识技能" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          知识技能
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../markdown/">
+        Markdown
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../python/">
+        Python进阶
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          正则表达式
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        正则表达式
+      </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 量词
+  </a>
+<nav aria-label="1. 量词" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11">
+    1.1 ?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12">
+    1.2 *
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13">
+    1.3 +
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14">
+    1.4 {}
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 运算
+  </a>
+<nav aria-label="2. 运算" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21">
+    2.1 或
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22">
+    2.2 预搜索
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 字符类
+  </a>
+<nav aria-label="3. 字符类" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31">
+    3.1 按范围匹配
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32">
+    3.2 元字符
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#33">
+    3.3 贪婪匹配和懒惰匹配
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_4" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4">
+          LaTeX
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="LaTeX" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+          LaTeX
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../latex/">
+        LaTeX基础
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../latex2/">
+        LaTeX进阶操作
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../beamer/">
+        用LaTeX做PPT
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tikz/">
+        TikZ绘图
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+          关于
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="关于" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          关于
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../about/about/">
+        1.关于
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../about/future/">
+        2.未来规划
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../about/ref/">
+        3.参考资料
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 量词
+  </a>
+<nav aria-label="1. 量词" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11">
+    1.1 ?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12">
+    1.2 *
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13">
+    1.3 +
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14">
+    1.4 {}
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 运算
+  </a>
+<nav aria-label="2. 运算" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21">
+    2.1 或
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22">
+    2.2 预搜索
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 字符类
+  </a>
+<nav aria-label="3. 字符类" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31">
+    3.1 按范围匹配
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32">
+    3.2 元字符
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#33">
+    3.3 贪婪匹配和懒惰匹配
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/wjsoj/wiki/edit/master/docs/knowledge/regex.md" title="编辑此页">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1 id="_1">正则表达式极简入门<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<p>后续会补充一些例子以方便理解</p>
+<h2 id="1">1. 量词<a class="headerlink" href="#1" title="Permanent link">¶</a></h2>
+<h3 id="11">1.1 ?<a class="headerlink" href="#11" title="Permanent link">¶</a></h3>
+<p>表示<code>?</code>前的字符可有可无</p>
+<h3 id="12">1.2 *<a class="headerlink" href="#12" title="Permanent link">¶</a></h3>
+<p>表示<code>*</code>前的字符可出现零次、一次或多次</p>
+<h3 id="13">1.3 +<a class="headerlink" href="#13" title="Permanent link">¶</a></h3>
+<p>表示<code>+</code>前的字符可出现一次或多次</p>
+<h3 id="14">1.4 {}<a class="headerlink" href="#14" title="Permanent link">¶</a></h3>
+<p>限定字符出现次数</p>
+<p><code>{x,y}</code>匹配出现次数在闭区间<span class="arithmatex">\([x,y]\)</span>之间的内容，省略则到无穷或0</p>
+<p><strong>以上均可与括号搭配匹配多个字符</strong></p>
+<h2 id="2">2. 运算<a class="headerlink" href="#2" title="Permanent link">¶</a></h2>
+<h3 id="21">2.1 或<a class="headerlink" href="#21" title="Permanent link">¶</a></h3>
+<p><code>|</code>表示选择运算符，同时匹配前后</p>
+<div class="admonition note">
+<p class="admonition-title">注意</p>
+<p>用括号表明层级关系</p>
+</div>
+<h3 id="22">2.2 预搜索<a class="headerlink" href="#22" title="Permanent link">¶</a></h3>
+<p>匹配后面是/不是<code>exp1</code>的<code>exp2</code></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>(?=exp1)exp2
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>(?!exp1)exp2
+</code></pre></div>
+<p>匹配前面是/不是<code>exp1</code>的<code>exp2</code></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>(?&lt;=exp1)exp2
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>(?&lt;!exp1)exp2
+</code></pre></div>
+<h2 id="3">3. 字符类<a class="headerlink" href="#3" title="Permanent link">¶</a></h2>
+<h3 id="31">3.1 按范围匹配<a class="headerlink" href="#31" title="Permanent link">¶</a></h3>
+<p><code>[]</code>表示字符可以取自一个范围</p>
+<p>例如：<code>[abc]</code> <code>[a-zA-Z]</code> <code>[a-z0-9]</code> <code>[a-Z]</code></p>
+<p>后方添加<code>+</code>表明匹配连续的一串，否则逐字符进行匹配</p>
+<p><code>^</code>表示取反</p>
+<p>例如：<code>[^a-zA-Z]</code>表示匹配阿拉伯字母外的所有字符（包括换行符）</p>
+<h3 id="32">3.2 元字符<a class="headerlink" href="#32" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>\d: 所有数字
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>\w: 单词——英文、数字、上下划线
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>\s: 空白符——空格 Tab 换行
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>\b: 单词字符的边界
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>\n: 换行符
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>\r: 回车符
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a>\t: Tab
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a>\v: 垂直制表符
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a>\\: 转义，匹配\本身
+</code></pre></div>
+<p>W、S、D大写表示取反</p>
+<p><code>.</code>表示任意字符，不包括换行符</p>
+<p><code>^</code>在字符后只会匹配行首，<code>$</code>在字符后只会匹配行尾</p>
+<h3 id="33">3.3 贪婪匹配和懒惰匹配<a class="headerlink" href="#33" title="Permanent link">¶</a></h3>
+<p>对于<code>&lt;span&gt;&lt;b&gt; html &lt;/b&gt;&lt;/span&gt;</code>这样的内容<code>&lt;.+&gt;</code>会全部匹配（默认&lt;属于<code>.</code>的范围&gt;），需要使用<code>&lt;.+?&gt;</code>改为懒惰匹配</p>
+<p>方法：在量词后加<code>?</code></p>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            回到页面顶部
+          </a>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: Python进阶" class="md-footer__link md-footer__link--prev" href="../python/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                上一页
+              </span>
+              Python进阶
+            </div>
+</div>
+</a>
+<a aria-label="下一页: LaTeX基础" class="md-footer__link md-footer__link--next" href="../latex/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                下一页
+              </span>
+              LaTeX基础
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2022 - 2023 WJS
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "navigation.instant", "navigation.tracking", "search.share", "toc.follow", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+<script src="../../js/extra.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

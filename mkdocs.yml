@@ -1,0 +1,137 @@
+site_name: Wiki
+site_description: 个人wiki
+site_author: WJS
+site_url: http://wjsphy.tk
+edit_uri: ""
+
+repo_name: wiki
+repo_url: 'https://github.com/wjsoj/wiki'
+
+copyright: Copyright &copy; 2022 - 2023 WJS
+
+theme:
+  name: material
+  palette:
+    # primary: white
+    # accent: red
+    # scheme: preference
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: red
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: red
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
+    # - toc.integrate
+    - navigation.top
+    # - navigation.sections
+    - search.suggest
+    # - navigation.indexes
+    - search.highlight
+    - navigation.instant
+    - navigation.tracking
+    - search.share
+    - toc.follow
+    - content.code.annotate
+    # - content.tabs.link
+  language: 'zh'
+  icon:
+    repo: fontawesome/brands/github-alt
+
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - footnotes
+  - meta
+  - md_in_html
+  - def_list
+  - attr_list
+  - tables
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.keys
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search:
+      lang: ja
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+      skip_classes:
+        - custom-skip-class-name
+      auto_caption: false
+      caption_position: bottom
+  - git-revision-date-localized:
+      # enable_creation_date: true
+      type: timeago
+
+extra_javascript:
+  - js/extra.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+
+nav:
+  - 介绍: 
+      - 1.简介: index.md
+      - 2.如何部署: introduction/start.md
+      - 3.原生欢迎页: introduction/mkdocs.md
+      - 4.更新日志: introduction/log.md
+  - 知识技能:
+      - Markdown: knowledge/markdown.md
+      - Python进阶: knowledge/python.md
+      - 正则表达式: knowledge/regex.md
+      - LaTeX:
+        - LaTeX基础: knowledge/latex.md
+        - LaTeX进阶操作: knowledge/latex2.md
+        - 用LaTeX做PPT: knowledge/beamer.md
+        - TikZ绘图: knowledge/tikz.md
+  - 关于:
+      - 1.关于: about/about.md
+      - 2.未来规划: about/future.md
+      - 3.参考资料: about/ref.md
