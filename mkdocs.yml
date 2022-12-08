@@ -135,5 +135,5 @@ nav:
         - TikZ绘图: knowledge/tikz.md
   - 关于:
       - 1.关于: about/about.md
-      - 2.未来规划: about/future.md
-      - 3.参考资料: about/ref.md
+      - 2.参考资料: about/ref.md
+      - 3.MkDocs增强语法: about/markdown.md

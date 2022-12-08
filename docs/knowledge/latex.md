@@ -542,16 +542,16 @@ book \cite{dirac} are physics-related items.
 \end{document}
 ```
 
-另一种方法（初学者建议用这个）：
+另一种加入参考文献的方法（初学者建议用这个， **只需要两行** 后面的内容可以跳过）：
 
 ```tex
 % 在\end{document}前面加入：
-\bibliography{sample.bib}
 % 按引用位置排序
 \bibliographystyle{unsrt}
+\bibliography{sample.bib}
 ```
 
-其他可选参数：
+这一种方法下的`style`可选参数：
 
 | option    | description                                      |
 | --------- | ------------------------------------------------ |
@@ -566,7 +566,7 @@ book \cite{dirac} are physics-related items.
 
 ### 3.1 可选参数
 
-**（在VS Code里其实是必选参数，而且必须用`bibtex`编译，悲）**
+**（在VS Code里其实是必选参数，而且必须用`bibtex`编译，目前不清楚其他编辑器的情况）**
 
 下面是另一个例子：
 
@@ -577,7 +577,7 @@ style=alphabetic,
 sorting=ynt
 ]{biblatex}
 % 建议用[backend=bibtex,style=numeric,sorting=none,natbib=true]
-% 按数字显示，按引用位置排序
+% 表示按数字显示，按引用位置排序
 \addbibresource{sample.bib}
 ```
 
