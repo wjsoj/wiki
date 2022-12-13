@@ -94,6 +94,7 @@ jobs:
       - run: pip install mkdocs-material  # (1)
       - run: mkdocs gh-deploy --force
 ```
+
 1. 请根据实际需要增加需要安装的库（否则会报错）
 
 !!!note "注意"
@@ -113,7 +114,7 @@ git push
 
 如果需要检查哪些文件发生了改动：
 ```bash
-git push
+git pull
 git status
 ```
 

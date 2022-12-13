@@ -440,7 +440,43 @@ permutations(迭代对象,元素个数)
 combinations(lst,n)
 ```
 
-### 5.17 其他操作
+### 5.17 类（实现C++中结构体）
+
+```python
+# 定义
+class platform:
+    def __init__(self,u,v,w):
+        self.l=u
+        self.r=v
+        self.h=w
+# 排序
+sort(key=lambda x:x.h,reverse=True)
+# 初始化
+for i in range(1,n+1):
+    u,v,w = [int(x) for x in input().split()]
+    pl[i]=platform(u,v,w)
+```
+
+### 5.18 BFS
+
+```python
+vis = [(1,1)]
+queue = [(1,1,0)]
+dx=[0,0,1,-1]
+dy=[1,-1,0,0]
+while queue:
+    x,y,ans=queue.pop(0)
+    if mp[x][y]==1:
+        print(ans)
+        exit()
+    for i in range(4):
+        nx =x+dx[i];ny=y+dy[i]
+        if (nx,ny) not in vis and mp[nx][ny]!=2:
+            queue.append((nx,ny,ans+1))
+            vis.append((nx,ny))
+```
+
+### 5.19 其他操作
 
 ```python
 # 进制转化
