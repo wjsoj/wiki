@@ -460,7 +460,7 @@ for i in range(1,n+1):
 ### 5.18 BFS
 
 ```python
-vis = [(1,1)]
+vis = {(1,1)} # (1)
 queue = [(1,1,0)]
 dx=[0,0,1,-1]
 dy=[1,-1,0,0]
@@ -473,10 +473,27 @@ while queue:
         nx =x+dx[i];ny=y+dy[i]
         if (nx,ny) not in vis and mp[nx][ny]!=2:
             queue.append((nx,ny,ans+1))
-            vis.append((nx,ny))
+            vis.add((nx,ny))
 ```
 
-### 5.19 其他操作
+1. 集合的查询速度更快
+
+### 5.19 dp最长上升子序列、最长下降子序列
+
+```python
+dp = [1]*1005
+ddp = [1]*1005
+for i in range(n):
+    for j in range(i+1,n):
+        if h[j]>h[i]:
+            dp[j]=max(dp[j],dp[i]+1)
+for i in range(n-1,-1,-1):
+    for j in range(i-1,-1,-1):
+        if h[j]>h[i]:
+            ddp[j]=max(ddp[j],ddp[i]+1)
+```
+
+### 5.20 其他操作
 
 ```python
 # 进制转化
