@@ -121,7 +121,7 @@ git status
 !!!note "注意"
 	一般来说在push之前都要先pull一下，这是在团队协作的项目中的基本礼貌。一旦别人修改了部分代码却没有告诉你，此时如果你的本地没有同步这一更改就直接push，可能会酿成无法挽回的后果。（但是目前本网站不需要大家一起push，所以也就无所谓了）
 
-**补充： ** 鉴于github在某些地方（特指某大学宿舍）访问速度特别慢，经常会出现`fatal: Could not read from remote repository.`这样的错误，如果你不注意，行容易轻信了网上的解释尝试更新SSH key，其实这完全是网络原因造成的。建议使用加速器或者全局代理之后，修改本地项目隐藏文件夹`.git`里的config文件，把url从SSH地址的形式修改成`https`链接的形式（例如：`https://github.com/wjsoj/wiki.git`），然后问题即可解决。
+**补充：** 鉴于github在某些地方（特指某大学宿舍）访问速度特别慢，经常会出现`fatal: Could not read from remote repository.`这样的错误，如果你不注意，很容易轻信了网上的解释尝试更新SSH key，其实这完全是网络原因造成的。建议使用加速器或者全局代理之后，修改本地项目隐藏文件夹`.git`里的config文件，把url从SSH地址的形式修改成`https`链接的形式（例如：`https://github.com/wjsoj/wiki.git`），然后问题即可解决。
 
 这是因为当代理处于开启状态时，git默认是不走代理端口的，使用`https`协议可以强行把流量给到git上。
 

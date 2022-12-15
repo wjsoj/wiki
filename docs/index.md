@@ -1,4 +1,4 @@
-[跳转测试](.\about\about.md)
+[跳转测试](.\about\about)
 
 ## Material color palette 颜色主题
 
