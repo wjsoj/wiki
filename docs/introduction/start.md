@@ -98,7 +98,7 @@ jobs:
 1. 请根据实际需要增加需要安装的库（否则会报错）
 
 !!!note "注意"
-	`ci.yml`文件中的`pip install`命令后面的库要根据自己的实际需要进行增加，这里指列出了最简的配置方案
+	`ci.yml`文件中的`pip install`命令后面的库要根据自己的实际需要进行增加，这里只列出了最简的配置方案
 
 **第三步：** 使用`git`命令将自己的项目push到github上
 
@@ -118,11 +118,16 @@ git pull
 git status
 ```
 
-!!!note "注意"
+!!!warning "注意"
 	一般来说在push之前都要先pull一下，这是在团队协作的项目中的基本礼貌。一旦别人修改了部分代码却没有告诉你，此时如果你的本地没有同步这一更改就直接push，可能会酿成无法挽回的后果。（但是目前本网站不需要大家一起push，所以也就无所谓了）
 
 **补充：** 鉴于github在某些地方（特指某大学宿舍）访问速度特别慢，经常会出现`fatal: Could not read from remote repository.`这样的错误，如果你不注意，很容易轻信了网上的解释尝试更新SSH key，其实这完全是网络原因造成的。建议使用加速器或者全局代理之后，修改本地项目隐藏文件夹`.git`里的config文件，把url从SSH地址的形式修改成`https`链接的形式（例如：`https://github.com/wjsoj/wiki.git`），然后问题即可解决。
 
 这是因为当代理处于开启状态时，git默认是不走代理端口的，使用`https`协议可以强行把流量给到git上。
 
-## 4.进阶操作
+!!! info "如何避免提交时写提交信息？"
+	像我这样的懒人经常不愿意写`commit -m "message"`后边的内容，但不写提交信息会导致报错，为了避免报错要使用`--allow-empty-message`参数。但如果不指定-m后的内容，git会在提交前打开编辑器让你检查提交的文件，为了跳过这一步骤要使用`--no-edit`参数
+	为了简化上述流程，可以自定义一个命令的别名，比如用`qcommit`指代上述命令，以后提交就直接执行`qcommit`即可：
+	```bash
+	git config --global alias.qcommit "commit --allow-empty-message --no-edit"
+	```

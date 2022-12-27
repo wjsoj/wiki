@@ -53,38 +53,41 @@ theme:
 
 
 markdown_extensions:
+  - abbr
   - admonition
-  - toc:
-      permalink: true
+  - attr_list
+  - def_list
   - footnotes
   - meta
   - md_in_html
-  - def_list
-  - attr_list
   - tables
+  - toc:
+      permalink: true
+      permalink_title: Anchor link to this section for reference
+      toc_depth: 3
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
   - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.critic
-  - pymdownx.details
-  - pymdownx.keys
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.inlinehilite
-  - pymdownx.magiclink
-  - pymdownx.mark
-  - pymdownx.smartsymbols
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
@@ -108,7 +111,8 @@ plugins:
       auto_caption: false
       caption_position: bottom
   - git-revision-date-localized:
-      type: timeago
+      enable_creation_date: true
+      type: iso_datetime
   - minify:
       minify_html: true
 
@@ -116,6 +120,7 @@ extra_javascript:
   - js/extra.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
 
 
 nav:
