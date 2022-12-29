@@ -1,7 +1,7 @@
 site_name: Wiki
 site_description: 个人wiki
 site_author: WJS
-site_url: http://wjsphy.tk
+site_url: http://wiki.wjsphy.tk
 edit_uri: ""
 
 repo_name: wiki
@@ -111,7 +111,7 @@ plugins:
       auto_caption: false
       caption_position: bottom
   - git-revision-date-localized:
-      enable_creation_date: true
+      enable_creation_date: false
       type: iso_datetime
   - minify:
       minify_html: true
