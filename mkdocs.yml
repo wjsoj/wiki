@@ -11,13 +11,14 @@ copyright: Copyright &copy; 2022 - 2023 WJS
 
 theme:
   name: material
+  custom_dir: overrides
   palette:
     # primary: white
     # accent: red
     # scheme: preference
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: white
+      primary: teal
       accent: red
       toggle:
         icon: material/weather-sunny
@@ -124,11 +125,12 @@ extra_javascript:
 
 
 nav:
-  - 介绍: 
-      - 1.简介: index.md
-      - 2.如何部署: introduction/start.md
-      - 3.原生欢迎页: introduction/mkdocs.md
-      - 4.更新日志: introduction/log.md
+  - 主页: index.md
+  - 介绍:
+      - 简介: introduction/index.md
+      - 如何部署: introduction/start.md
+      - 原生欢迎页: introduction/mkdocs.md
+      - 更新日志: introduction/log.md
   - 知识技能:
       - Markdown: knowledge/markdown.md
       - Python进阶: knowledge/python.md
@@ -138,6 +140,7 @@ nav:
         - LaTeX进阶操作: knowledge/latex2.md
         - 用LaTeX做PPT: knowledge/beamer.md
         - TikZ绘图: knowledge/tikz.md
+      - 包管理器: knowledge/pkmanager.md
   - 关于:
       - 1.关于: about/about.md
       - 2.参考资料: about/ref.md

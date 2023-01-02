@@ -617,3 +617,17 @@ The HTML is short for Hyper Text Markup Language.
 访问官方说明文档来查找需要的图标/表情，使用时用两个`:`括住即可：
 
 [前往搜索链接](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search){.md-button}
+
+或者在此搜索：
+
+<div class="mdx-iconsearch" data-mdx-component="iconsearch">
+  <input
+    class="md-input md-input--stretch mdx-iconsearch__input"
+    placeholder="Search the icon and emoji database"
+    data-mdx-component="iconsearch-query"
+  />
+  <div class="mdx-iconsearch-result" data-mdx-component="iconsearch-result">
+    <div class="mdx-iconsearch-result__meta"></div>
+    <ol class="mdx-iconsearch-result__list"></ol>
+  </div>
+</div>
