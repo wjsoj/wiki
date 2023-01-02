@@ -33,6 +33,10 @@ theme:
         name: Switch to light mode
   features:
     - navigation.tabs
+    - content.code.copy
+    # - content.action.edit
+    # - content.action.view
+    - navigation.footer
     - navigation.tabs.sticky
     - navigation.expand
     # - toc.integrate
