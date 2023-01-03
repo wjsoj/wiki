@@ -1,8 +1,14 @@
 ## Material color palette 颜色主题
 
-### Primary colors 主色
+网站默认提供两种预设方案，理论上会根据当前系统的设定选择浅色和深色两种模式，可以在右上角手动选择（当然可能会出现颜色模式不匹配、颜色模式混乱等各种bug...）
 
-> 默认为 `white`
+浅色模式对应：主色`Teal` 辅助色：`Red` 颜色模式：`default`
+
+深色模式对应：主色`Blue Grey` 辅助色：`Red` 颜色模式：`slate`
+
+欢迎在这里自定义你所喜欢的颜色，颜色配置全局生效。主色应用于：导航栏、超链接文字、侧边栏高亮等较显眼的地方；辅助色则改变按钮、超链接等响应式控件被点击后的颜色，在阅读过程中影响不大；颜色模式为基础浅色、深色模式的切换
+
+### Primary colors 主色
 
 点击色块可更换主题的主色
 
@@ -41,8 +47,6 @@
 
 ### Accent colors 辅助色
 
-> 默认为 `red`
-
 点击色块更换主题的辅助色
 
 <div class="tx-switch">
@@ -74,8 +78,6 @@
 </script>
 
 ### 颜色模式
-
-> 默认为 `default`
 
 <div class="tx-switch">
 <button data-md-color-scheme="default"><code>Default</code></button>
