@@ -1,3 +1,9 @@
+---
+created_time: 2022-11-30 17:47:05
+modified_time: 2022-12-03 22:20:54
+author: WJS
+github: wjsoj
+---
 # 如何用LaTeX写PPT
 
 ## 1. 前言与基本格式

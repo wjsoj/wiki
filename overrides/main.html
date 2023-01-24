@@ -12,10 +12,13 @@
   {% if pgauthor is defined %}
     <small>
       <!-- 本文出至: <a href="{{ config.site_url }}">{{ config.site_name }} </a> -->
-      作者：<b><a href="{{ pgauthor_github }}">{{pgauthor}}</a></b>
+      <br>
+      作者：<b><a href="{{ pgauthor_github }}">{{pgauthor}}</a></b><br>
+      文档创建时间：{{page.meta.created_time}}<br>
+      最后修改时间：{{page.meta.modified_time}}
     </small>
   {% endif %}
-{% endblock %}
+{% endblock %}s
 
 {% block scripts %}
   {{ super() }}

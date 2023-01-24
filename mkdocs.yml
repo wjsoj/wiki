@@ -115,9 +115,9 @@ plugins:
         - custom-skip-class-name
       auto_caption: false
       caption_position: bottom
-  - git-revision-date-localized:
-      enable_creation_date: true
-      type: timeago
+  # - git-revision-date-localized:
+  #     enable_creation_date: false
+  #     type: timeago
   - minify:
       minify_html: true
 
@@ -133,7 +133,7 @@ extra_javascript:
 nav:
   - 主页: index.md
   - 介绍:
-      - 简介: introduction/index.md
+      - 简介: introduction/intro.md
       - 如何部署: introduction/start.md
       - 原生欢迎页: introduction/mkdocs.md
       - 更新日志: introduction/log.md

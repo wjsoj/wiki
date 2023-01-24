@@ -1,3 +1,9 @@
+---
+created_time: 2023-01-02 19:28:51
+modified_time: 2023-01-02 20:28:22
+author: WJS
+github: wjsoj
+---
 # 常见包管理器的使用
 
 ## 1. pip

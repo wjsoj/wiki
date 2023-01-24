@@ -1,3 +1,9 @@
+---
+created_time: 2022-11-18 22:28:14
+modified_time: 2022-12-13 22:49:26
+author: WJS
+github: wjsoj
+---
 # 关于Python的一些语法补充
 
 ## 1. 输入输出
