@@ -1,5 +1,5 @@
 ---
-author: wjs
+author: WJS
 github: wjsoj
 ---
 

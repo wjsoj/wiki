@@ -8,16 +8,13 @@
 {% endblock %}
 
 {% block content %}
-    {% block page_content %}
-        {# the cover page #}
-        {{ page.content }}
-        {% if pgauthor is defined %}
-        <h5>
-            <!-- 本文出至: <a href="{{ config.site_url }}">{{ config.site_name }} </a> -->
-            作者：<a href="{{ pgauthor_github }}">{{pgauthor}}</a>
-        </h5>
-        {% endif %}   
-    {% endblock %}
+  {{super()}}
+  {% if pgauthor is defined %}
+    <small>
+      <!-- 本文出至: <a href="{{ config.site_url }}">{{ config.site_name }} </a> -->
+      作者：<b><a href="{{ pgauthor_github }}">{{pgauthor}}</a></b>
+    </small>
+  {% endif %}
 {% endblock %}
 
 {% block scripts %}
