@@ -147,6 +147,12 @@ nav:
         - 用LaTeX做PPT: knowledge/beamer.md
         - TikZ绘图: knowledge/tikz.md
       - 包管理器: knowledge/pkmanager.md
+  - 体系化知识:
+      - 前端:
+        - 学习指南: frontend/navigate.md
+        - HTML基础: frontend/html.md
+        - CSS基础: frontend/css.md
+        - JS基础: frontend/js.md
   - 关于:
       - 1.关于: about/about.md
       - 2.参考资料: about/ref.md

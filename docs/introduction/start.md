@@ -133,7 +133,12 @@ git status
 
 !!! info "如何避免提交时写提交信息？"
 	像我这样的懒人经常不愿意写`commit -m "message"`后边的内容，但不写提交信息会导致报错，为了避免报错要使用`--allow-empty-message`参数。但如果不指定-m后的内容，git会在提交前打开编辑器让你检查提交的文件，为了跳过这一步骤要使用`--no-edit`参数
+	
 	为了简化上述流程，可以自定义一个命令的别名，比如用`qcommit`指代上述命令，以后提交就直接执行`qcommit`即可：
 	```bash
 	git config --global alias.qcommit "commit --allow-empty-message --no-edit"
+	```
+	如果需要重置代理：
+	```bash
+	git config --global --unset https.proxy
 	```
