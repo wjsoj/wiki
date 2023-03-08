@@ -1,3 +1,9 @@
+---
+created_time: 2023-02-23 21:58:18
+modified_time: 2023-02-24 10:54:14
+author: WJS
+github: wjsoj
+---
 # JavaScript基础
 
 ## 1. 使用方式

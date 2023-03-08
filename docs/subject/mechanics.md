@@ -1,3 +1,9 @@
+---
+created_time: 2023-01-25 16:09:33
+modified_time: 2023-01-27 17:11:18
+author: WJS
+github: wjsoj
+---
 # 力学
 
 ##  前言
