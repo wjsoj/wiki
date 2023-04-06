@@ -551,3 +551,29 @@ def function():
     # 这里的递归中间过程会被保留在缓存中
 ```
 
+## 7. 数据结构
+
+### 7.1 栈
+
+```python
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        return self.items.pop()
+
+    def is_empty(self):
+        return self.items == []
+
+    def peek(self):
+        if not self.is_empty():
+            return self.items[-1]
+
+    def get_stack(self):
+        return self.items
+```
+
