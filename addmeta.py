@@ -16,4 +16,4 @@ for root, dirs, files in os.walk(path):
                 content = '---\ncreated_time: '+created_time+'\nmodified_time: '+modified_time+'\nauthor: WJS\ngithub: wjsoj\n---\n'+content
                 with open(file_path,'w',encoding='utf-8') as f:
                     f.write(content)
-            print(file_path[file_path.find('docs'):]+' Added')
+                print(file_path[file_path.find('docs'):]+' Added')

@@ -1,6 +1,6 @@
 ---
 created_time: 2023-01-02 19:28:51
-modified_time: 2023-01-02 20:28:22
+modified_time: 2023-06-09 10:13:22
 author: WJS
 github: wjsoj
 ---
@@ -67,6 +67,13 @@ pip-review --auto # 更新所有包
 import os
 for line in os.popen('pip list').readlines():
     os.system('pip install --upgrade ' + line.split(' ')[0])
+```
+
+### 1.4 生成requirements.txt
+
+```bash
+pip install pipreqs
+pipreqs ./ --encoding=utf8
 ```
 
 

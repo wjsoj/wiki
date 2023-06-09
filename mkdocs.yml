@@ -154,6 +154,7 @@ nav:
         - CSS基础: frontend/css.md
         - JS基础: frontend/js.md
         - JS进阶: frontend/js2.md
+      - 数据结构与算法: knowledge/pkudsa.md
   - 关于:
       - 1.关于: about/about.md
       - 2.参考资料: about/ref.md
