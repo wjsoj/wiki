@@ -570,3 +570,523 @@ def dpMakeChange(coinValueList,change,minCoins):
     return minCoins[change]
 ```
 
+## 5. 树
+
+**分类树的特征：**
+
+层次化，子节点与另一个节点的子节点之间相互隔离、独立，叶节点的唯一性
+
+### 5.1 嵌套列表实现
+
+实现二叉树：
+
+```python
+# 嵌套列表法实现二叉树
+def BinaryTree(r):
+    return [r, [], []]
+
+def insertLeft(root, newBranch):
+    t = root.pop(1)
+    if len(t) > 1:
+        root.insert(1, [newBranch, t, []])
+    else:
+        root.insert(1, [newBranch, [], []])
+    return root
+
+def insertRight(root, newBranch):
+    t = root.pop(2)
+    if len(t) > 1:
+        root.insert(2, [newBranch, [], t])
+    else:
+        root.insert(2, [newBranch, [], []])
+    return root
+
+def getRootVal(root):
+    return root[0]
+
+def setRootVal(root, newVal):
+    root[0] = newVal
+
+def getLeftChild(root):
+    return root[1]
+
+def getRightChild(root):
+    return root[2]
+```
+
+### 5.2 链表实现
+
+```python
+# 链表实现二叉树
+class BinaryTree:
+    def __init__(self, rootObj):
+        self.key = rootObj
+        self.leftChild = None
+        self.rightChild = None
+    
+    def insertLeft(self, newNode):
+        if self.leftChild == None:
+            self.leftChild = BinaryTree(newNode)
+        else:
+            # 将原来的左子树作为新节点的左子树
+            t = BinaryTree(newNode)
+            t.leftChild = self.leftChild
+            self.leftChild = t
+    
+    def insertRight(self, newNode):
+        if self.rightChild == None:
+            self.rightChild = BinaryTree(newNode)
+        else:
+            # 将原来的右子树作为新节点的右子树
+            t = BinaryTree(newNode)
+            t.rightChild = self.rightChild
+            self.rightChild = t
+    
+    def getRightChild(self):
+        return self.rightChild
+    
+    def getLeftChild(self):
+        return self.leftChild
+    
+    def setRootVal(self, obj):
+        self.key = obj
+    
+    def getRootVal(self):
+        return self.key
+```
+
+### 5.3 树的遍历
+
+```python
+def preorder(tree):
+    if tree:
+        print(tree.getRootVal())
+        preorder(tree.getLeftChild())
+        preorder(tree.getRightChild())
+
+def inorder(tree):
+    if tree:
+        inorder(tree.getLeftChild())
+        print(tree.getRootVal())
+        inorder(tree.getRightChild())
+
+def postorder(tree):
+    if tree:
+        postorder(tree.getLeftChild())
+        postorder(tree.getRightChild())
+        print(tree.getRootVal())
+```
+
+### 5.4 表达式解析
+
+树的构建
+
+```python
+def buildParseTree(fpexp):
+    fplist = fpexp.split()
+    pStack = Stack()
+    eTree = BinaryTree('')
+    pStack.push(eTree)
+    currentTree = eTree
+    
+    for i in fplist:
+        if i == '(':
+            currentTree.insertLeft('')
+            pStack.push(currentTree)
+            currentTree = currentTree.getLeftChild()
+        elif i not in ['+', '-', '*', '/', ')']:
+            currentTree.setRootVal(int(i))
+            parent = pStack.pop()
+            currentTree = parent
+        elif i in ['+', '-', '*', '/']:
+            currentTree.setRootVal(i)
+            currentTree.insertRight('')
+            pStack.push(currentTree)
+            currentTree = currentTree.getRightChild()
+        elif i == ')':
+            currentTree = pStack.pop()
+        else:
+            raise ValueError
+    
+    return eTree
+```
+
+表达式递归求值
+
+```python
+def evaluate(parseTree):
+    opers = {'+': operator.add, '-': operator.sub, '*': operator.mul, '/': operator.truediv}
+    
+    leftC = parseTree.getLeftChild()
+    rightC = parseTree.getRightChild()
+    
+    if leftC and rightC:
+        fn = opers[parseTree.getRootVal()]
+        return fn(evaluate(leftC), evaluate(rightC))
+    else:
+        return parseTree.getRootVal()
+```
+
+### 5.5 完全二叉树与二叉堆
+
+最底层节点连续集中在左边，每个非叶节点都有两个子节点，最多一个节点除外
+
+左节点下标是父节点下标*2（根节点下标是1）
+
+对于二叉堆，父节点的值一定小于子节点
+
+```python
+class BinHeap:
+    def __init__(self):
+        self.heapList = [0]
+        self.currentSize = 0
+
+    # 向上调整
+    def percUp(self, i):
+        while i // 2 > 0:
+            if self.heapList[i] < self.heapList[i//2]:
+                self.heapList[i], self.heapList[i//2] = self.heapList[i//2], self.heapList[i]
+            i //= 2
+
+    # 向下调整
+    def percDown(self, i):
+        while i * 2 <= self.currentSize:
+            mc = self.minChild(i)
+            if self.heapList[i] > self.heapList[mc]:
+                self.heapList[i], self.heapList[mc] = self.heapList[mc], self.heapList[i]
+            i = mc
+
+    # 找到最小的孩子
+    def minChild(self, i):
+        if i * 2 + 1 > self.currentSize:
+            return i * 2
+        else:
+            if self.heapList[i*2] < self.heapList[i*2+1]:
+                return i * 2
+            else:
+                return i * 2 + 1
+
+    # 插入
+    def insert(self, k):
+        self.heapList.append(k)
+        self.currentSize += 1
+        self.percUp(self.currentSize)
+
+    # 删除最小值
+    def delMin(self):
+        ret = self.heapList[1]
+        self.heapList[1] = self.heapList[self.currentSize]
+        self.currentSize -= 1
+        self.heapList.pop()
+        self.percDown(1)
+        return ret
+
+    # 建堆
+    def buildHeap(self, alist):
+        self.currentSize = len(alist)
+        self.heapList = [0] + alist[:]
+        i = self.currentSize // 2
+        while i > 0:
+            self.percDown(i)
+            i -= 1
+```
+
+### 5.6 二叉查找树
+
+`TreeNode`类：
+
+```python
+class TreeNode:
+    def __init__(self, key, val, left = None, right = None, parent = None):
+        self.key = key
+        self.val = val
+        self.leftChild = left
+        self.rightChild = right
+        self.parent = parent
+    
+    def hasLeftChild(self):
+        return self.leftChild
+    def hasRightChild(self):
+        return self.rightChild
+    def isLeftChild(self):
+        return self.parent and self.parent.leftChild == self
+    def isRightChild(self):
+        return self.parent and self.parent.rightChild == self
+    def isRoot(self):
+        return not self.parent
+    def isLeaf(self):
+        return not (self.leftChild or self.rightChild)
+    def hasAnyChildren(self):
+        return self.leftChild or self.rightChild
+    def hasBothChildren(self):
+        return self.leftChild and self.rightChild
+    def replaceNodeData(self, key, val, lc, rc):
+        self.key = key
+        self.val = val
+        self.leftChild = lc
+        self.rightChild = rc
+        if self.hasLeftChild():
+            self.leftChild.parent = self
+        if self.hasRightChild():
+            self.rightChild.parent = self
+    
+    def __iter__(self):
+        if self:
+            if self.hasLeftChild():
+                for elem in self.leftChild:
+                    yield elem
+            yield self.key
+            if self.hasRightChild():
+                for elem in self.rightChild:
+                    yield elem
+    
+    def spliceOut(self):
+        if self.isLeaf():
+            if self.isLeftChild():
+                self.parent.leftChild = None
+            else:
+                self.parent.rightChild = None
+        
+        elif self.hasAnyChildren():
+            if self.hasLeftChild():
+                if self.isLeftChild():
+                    self.parent.leftChild = self.leftChild
+                else:
+                    self.parent.rightChild = self.leftChild
+                self.leftChild.parent = self.parent
+            
+            else:
+                if self.isLeftChild():
+                    self.parent.leftChild = self.rightChild
+                else:
+                    self.parent.rightChild = self.rightChild
+                self.rightChild.parent = self.parent
+```
+
+`BinarySearchTree`类：
+
+```python
+class BinarySearchTree:
+    def __init__(self):
+        self.root = None
+        self.size = 0
+    
+    def length(self):
+        return self.size
+    def __len__(self):
+        return self.size
+    
+    def __iter__(self):
+        return self.root.__iter__()
+    
+    def put(self, key, val):
+        if self.root:
+            self._put(key, val, self.root)
+        else:
+            self.root = TreeNode(key, val)
+        self.size += 1
+    
+    def _put(self, key, val, currentNode):
+        if key < currentNode.key:
+            if currentNode.hasLeftChild():
+                self._put(key, val, currentNode.leftChild)
+            else:
+                currentNode.leftChild = TreeNode(key, val, parent = currentNode)
+        else:
+            if currentNode.hasRightChild():
+                self._put(key, val, currentNode.rightChild)
+            else:
+                currentNode.rightChild = TreeNode(key, val, parent = currentNode)
+    
+    def __setitem__(self, k, v):
+        self.put(k, v)
+    
+    def get(self, key):
+        if self.root:
+            res = self._get(key, self.root)
+            if res:
+                return res.val
+            else:
+                return None
+        else:
+            return None
+    
+    def _get(self, key, currentNode):
+        if not currentNode:
+            return None
+        elif currentNode.key == key:
+            return currentNode
+        elif key < currentNode.key:
+            return self._get(key, currentNode.leftChild)
+        else:
+            return self._get(key, currentNode.rightChild)
+    
+    def __getitem__(self, key):
+        return self.get(key)
+    
+    def __contains__(self, key):
+        if self._get(key, self.root):
+            return True
+        else:
+            return False
+    
+    def delete(self, key):
+        if self.size > 1:
+            nodeToRemove = self._get(key, self.root)
+            if nodeToRemove:
+                self.remove(nodeToRemove)
+                self.size -= 1
+            else:
+                raise KeyError('Error, key not in tree')
+        elif self.size == 1 and self.root.key == key:
+            self.root = None
+            self.size -= 1
+        else:
+            raise KeyError('Error, key not in tree')
+    
+    def __delitem__(self, key):
+        self.delete(key)
+    
+    def remove(self, currentNode):
+        if currentNode.isLeaf():
+            if currentNode == currentNode.parent.leftChild:
+                currentNode.parent.leftChild = None
+            else:
+                currentNode.parent.rightChild = None
+        
+        elif currentNode.hasBothChildren():
+            succ = currentNode.findSuccessor()
+            succ.spliceOut()
+            currentNode.key = succ.key
+            currentNode.val = succ.val
+        
+        else:
+            if currentNode.hasLeftChild():
+                if currentNode.isLeftChild():
+                    currentNode.leftChild.parent = currentNode.parent
+                    currentNode.parent.leftChild = currentNode.leftChild
+                elif currentNode.isRightChild():
+                    currentNode.leftChild.parent = currentNode.parent
+                    currentNode.parent.rightChild = currentNode.leftChild
+                else:
+                    currentNode.replaceNodeData(currentNode.leftChild.key, currentNode.leftChild.val, currentNode.leftChild.leftChild, currentNode.leftChild.rightChild)
+            
+            else:
+                if currentNode.isLeftChild():
+                    currentNode.rightChild.parent = currentNode.parent
+                    currentNode.parent.leftChild = currentNode.rightChild
+                elif currentNode.isRightChild():
+                    currentNode.rightChild.parent = currentNode.parent
+                    currentNode.parent.rightChild = currentNode.rightChild
+                else:
+                    currentNode.replaceNodeData(currentNode.rightChild.key, currentNode.rightChild.val, currentNode.rightChild.leftChild, currentNode.rightChild.rightChild)
+    
+    def findSuccessor(self):
+        succ = None
+        if self.hasRightChild():
+            succ = self.rightChild.findMin()
+        else:
+            if self.parent:
+                if self.isLeftChild():
+                    succ = self.parent
+                else:
+                    self.parent.rightChild = None
+                    succ = self.parent.findSuccessor()
+                    self.parent.rightChild = self
+        return succ
+    
+    def findMin(self):
+        current = self
+        while current.hasLeftChild():
+            current = current.leftChild
+        return current
+```
+
+## 6. 图
+
+### 6.1 ADT实现
+
+```python
+class Vertex:
+    def __init__(self, key):
+        self.key = key
+        self.neighbors = {}
+    
+    def addNeighbor(self, neighbor, weight):
+        self.neighbors[neighbor] = weight
+    
+    def __str__(self):
+        return str(self.key) + ' neighbors: ' + str([x.key for x in self.neighbors])
+    
+    def getConnection(self):
+        return self.neighbors.keys()
+    
+    def getID(self):
+        return self.key
+    
+    def getWeight(self, neighbor):
+        return self.neighbors[neighbor]
+
+class Graph:
+    def __init__(self):
+        self.vertList = {}
+        self.numVertices = 0
+    
+    def addVertex(self, key):
+        self.numVertices += 1
+        newVertex = Vertex(key)
+        self.vertList[key] = newVertex
+        return newVertex
+    
+    def getVertex(self, n):
+        if n in self.vertList:
+            return self.vertList[n]
+        else:
+            return None
+    
+    def __contains__(self, n):
+        return n in self.vertList
+    
+    def addEdge(self, f, t, cost=0):
+        if f not in self.vertList:
+            self.addVertex(f)
+        
+        if t not in self.vertList:
+            self.addVertex(t)
+        
+        self.vertList[f].addNeighbor(self.vertList[t], cost)
+    
+    def getVertices(self):
+        return self.vertList.keys()
+    
+    def __iter__(self):
+        return iter(self.vertList.values())
+```
+
+### 6.2 拓扑排序
+
+有向无环图，若有边`(v,w)`则v出现在w之前
+
+### 6.3 强连通分支
+
+子集中任意两个点之间均有路径来回的最大子集
+
+算法：Kosaraju
+
+1. 第一遍搜索，记录开始/结束时间
+2. 将图进行转置，调用第二遍搜索，以顶点的结束时间倒序开始搜索
+3. 每一棵树就是一个连通分支
+
+### 6.4 最短路
+
+Dijkstra算法 单源最短路
+
+复杂度：$ O(((V+E)logV))$
+
+### 6.5 最小生成树
+
+定义：包含所有顶点的无圈子集，使边权重和最小
+
+Prim算法（贪心），返回给定起点出发的最小生成树
+
+每次取边权重最小的可以添加（一点在子集内，一点不在）的边添加进树内
