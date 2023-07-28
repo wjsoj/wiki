@@ -1,10 +1,14 @@
 // MathJax支持
+MathJax = {
+  loader: {load: ['ui/lazy']}
+};
 window.MathJax = {
   tex: {
     inlineMath: [["\\(", "\\)"]],
     displayMath: [["\\[", "\\]"]],
     processEscapes: true,
-    processEnvironments: true
+    processEnvironments: true,
+    // tags: 'ams'
   },
   options: {
     ignoreHtmlClass: ".*|",
