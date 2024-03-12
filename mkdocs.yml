@@ -152,6 +152,7 @@ nav:
         - JS基础: frontend/js.md
         - JS进阶: frontend/js2.md
         - Vue速查: frontend/vue.md
+        - React速查: frontend/react.md
       - 数据结构与算法: knowledge/pkudsa.md
   - 关于:
       - 1.关于: about/about.md
